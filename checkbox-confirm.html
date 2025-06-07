@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I'm not a robot</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .captcha-box {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 20px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .checkbox {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+    #message {
+        margin-left: 15px;
+        font-weight: bold;
+        color: green;
+    }
+    </style>
+</head>
+<body>
+
+<div class="captcha-box">
+    <input type="checkbox" id="robotCheckbox" class="checkbox" onclick="confirmCheck()">
+    <label for="robotCheckbox">I'm not a robot</label>
+    <span id="message"></span>
+</div>
+
+<script>
+    function confirmCheck() {
+    const checkbox = document.getElementById('robotCheckbox');
+    const message = document.getElementById('message');
+    if (checkbox.checked) {
+        message.textContent = "Confirmed";
+    } else {
+        message.textContent = "";
+    }
+    }
+</script>
+
+</body>
+</html>
